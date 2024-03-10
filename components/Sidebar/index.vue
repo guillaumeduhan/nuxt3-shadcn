@@ -4,6 +4,6 @@ const loading = ref(false)
 
 <template>
   <div>
-    main page
+    hello sidebar
   </div>
 </template>
