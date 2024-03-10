@@ -1,8 +1,6 @@
 <template>
-  <div class="flex items-start">
+  <div class="grid items-start gap-2 lg:flex">
     <Sidebar />
-    <div>
-      <slot />
-    </div>
+    <slot />
   </div>
 </template>
