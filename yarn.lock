@@ -900,7 +900,7 @@
     which "^3.0.1"
     ws "^8.16.0"
 
-"@nuxt/kit@3.10.3", "@nuxt/kit@^3.8.2", "@nuxt/kit@^3.9.1", "@nuxt/kit@^3.9.3":
+"@nuxt/kit@3.10.3", "@nuxt/kit@^3.5.1", "@nuxt/kit@^3.8.2", "@nuxt/kit@^3.9.1", "@nuxt/kit@^3.9.3":
   version "3.10.3"
   resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.10.3.tgz"
   integrity sha512-PUjYB9Mvx0qD9H1QZBwwtY4fLlCLET+Mm9BVqUOtXCaGoXd6u6BE4e/dGFPk2UEKkIcDGrUMSbqkHYvsEuK9NQ==
@@ -3698,6 +3698,11 @@ lucide-vue-next@^0.344.0:
   resolved "https://registry.yarnpkg.com/lucide-vue-next/-/lucide-vue-next-0.344.0.tgz#c176f62f2a6ee043576cb32915b23428449ec7c1"
   integrity sha512-YvexWTTzcRScmOKUvbQvexDmIK63x6NT8lV3Cot9TShQyy3PpFxfx5i2wZNhaZfV8bKqTMRXgCs372rnrtPYKQ==
 
+lucide-vue-next@^0.x:
+  version "0.354.0"
+  resolved "https://registry.yarnpkg.com/lucide-vue-next/-/lucide-vue-next-0.354.0.tgz#dc3560c7625fb538511250a1e86b74f5c06eba2c"
+  integrity sha512-FVs/VXBTVSqfLywln5U0MQsB/iBdov5BBa2R9hhOaKzP9XtvuUV1jTctevEL7cgLxHpK9J4RPWSjPbPJzu1EPA==
+
 magic-string-ast@^0.3.0:
   version "0.3.0"
   resolved "https://registry.npmjs.org/magic-string-ast/-/magic-string-ast-0.3.0.tgz"
@@ -4239,6 +4244,16 @@ nuxi@^3.10.1:
   integrity sha512-ZNt858+FOZDIiKKFJkXO7uJAnALytDdn1XbLgtZAqbtWNMayHbOnWcnxh+WSOE4H9uOi2+loWXEqKElmNWLgcQ==
   optionalDependencies:
     fsevents "~2.3.3"
+
+nuxt-lucide-icons@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/nuxt-lucide-icons/-/nuxt-lucide-icons-1.0.4.tgz#bfe6200fa7d686e8912471d8d01a9afa0bb494bf"
+  integrity sha512-LflNOKuQh6cZIFLx/b5e83hMkVSSADYop+8qn09v8UHDZgGY26tuZFon9jHhWeQtrXnJcY2EVMvmAIgKd9jVGg==
+  dependencies:
+    "@nuxt/kit" "^3.5.1"
+    lucide-vue-next "^0.x"
+    pathe "^1.1.0"
+    scule "^1.0.0"
 
 nuxt@^3.10.3:
   version "3.10.3"
