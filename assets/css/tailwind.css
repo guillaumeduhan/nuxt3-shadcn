@@ -75,4 +75,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1 {
+    @apply text-[36px] font-[700];
+  }
+  p {
+    @apply m-0 text-neutral-400;
+  }
 }
