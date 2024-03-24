@@ -10,12 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nivo/core": "^0.85.1",
-    "@nivo/line": "^0.85.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-vue-next": "^0.344.0",
     "nuxt": "^3.10.3",
+    "nuxt-highcharts": "^3.1.1",
     "radix-vue": "^1.4.9",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
