@@ -12,7 +12,7 @@ const list = [
     title: "Year"
   }
 ]
-// 1. make categories
+
 let categories = ref({
   today: [
     "00:00",
@@ -64,95 +64,9 @@ let categories = ref({
     'Dec'
   ]
 })
-// 2. where we are going to save the data
-let data = ref([])
-// 3. the current category
+
 let currentCategory = ref("today");
-// 4. the options of charts
-let options = computed(() => ({
-  chart: {
-    type: 'line',
-    animation: {
-      enabled: false
-    }
-  },
-  title: {
-    text: ''
-  },
-  xAxis: {
-    gridLineColor: 'transparent', // remove line
-    categories: categories.value[currentCategory.value]
-  },
-  yAxis: {
-    gridLineColor: 'transparent',
-    title: { // remove title
-      text: ''
-    }
-  },
-  legend: {
-    enabled: false
-  },
-  plotOptions: {
-    line: {
-      marker: { // remove points
-        enabled: false
-      },
-      dataLabels: {
-        enabled: false
-      },
-      enableMouseTracking: false
-    }
-  },
-  series: [{
-    name: 'line',
-    lineWidth: '4px',
-    color: { // gradients
-      linearGradient: { y1: 0, y2: 0, y3: 0, y4: 0 },
-      stops: [
-        [0, 'rgba(252,176,69,1)'],
-        [0.33, 'rgba(253,29,29,1)'],
-        [0.66, 'rgba(131,58,180,1)'],
-        [1, 'rgba(29,217,93,1)'],
-      ]
-    },
-    data: data.value
-  }]
-}))
 
-// 5. a function to generate current month
-function generateMonth() {
-  let currentDate = new Date();
-  let currentMonth = currentDate.getMonth() + 1; // Current month (1 for January, 2 for February, etc.)
-  let currentYear = currentDate.getFullYear(); // Current year
-
-  function generateMonthDates() {
-    let monthDates = [];
-    let daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
-
-    for (let i = 1; i <= daysInMonth; i++) {
-      let dayString = ("0" + i).slice(-2); // Format day with two digits (01, 02, ..., 31)
-      let monthString = ("0" + currentMonth).slice(-2); // Format month with two digits (01, 02, ..., 12)
-      monthDates.push(monthString + "/" + dayString);
-    }
-
-    return monthDates;
-  }
-
-  let month = generateMonthDates();
-  categories.value = ({ ...categories.value, month })
-  return month;
-}
-
-// 6. a function to generate random values depending on current category
-function generateRandomValue(number = 7) {
-  let values = [];
-  for (let j = 0; j < number + 1; j++) {
-    values.push(Math.floor(Math.random() * 100));
-  }
-  data.value = values;
-  return values;
-}
-// 7. a function to catch shadcn tab change + set category
 const setCategory = (e) => {
   let v = e.target.innerText.toLowerCase();
   currentCategory.value = v
@@ -212,9 +126,13 @@ const cards = [
       </Tabs>
     </main>
     <footer>
-      <div class="grid gap-4 lg:grid-cols-3">
+      <<<<<<< HEAD <div class="grid gap-4 lg:grid-cols-3">
         <p>Cards here</p>
-      </div>
+        =======
+        <div class="grid gap-4 lg:grid-cols-3">
+          <Card v-for='( item, index ) in  3 ' :key='index' />
+          >>>>>>> ba0c728 (commit)
+        </div>
     </footer>
   </div>
 </template>
