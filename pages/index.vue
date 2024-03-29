@@ -126,13 +126,11 @@ const cards = [
       </Tabs>
     </main>
     <footer>
-      <<<<<<< HEAD <div class="grid gap-4 lg:grid-cols-3">
-        <p>Cards here</p>
-        =======
+      <div class="grid gap-4 lg:grid-cols-3">
         <div class="grid gap-4 lg:grid-cols-3">
           <Card v-for='( item, index ) in  3 ' :key='index' />
-          >>>>>>> ba0c728 (commit)
         </div>
+      </div>
     </footer>
   </div>
 </template>
