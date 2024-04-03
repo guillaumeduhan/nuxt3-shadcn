@@ -1395,6 +1395,18 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tanstack/table-core@8.15.3":
+  version "8.15.3"
+  resolved "https://registry.npmjs.org/@tanstack/table-core/-/table-core-8.15.3.tgz"
+  integrity sha512-wOgV0HfEvuMOv8RlqdR9MdNNqq0uyvQtP39QOvGlggHvIObOE4exS+D5LGO8LZ3LUXxId2IlUKcHDHaGujWhUg==
+
+"@tanstack/vue-table@^8.15.3":
+  version "8.15.3"
+  resolved "https://registry.npmjs.org/@tanstack/vue-table/-/vue-table-8.15.3.tgz"
+  integrity sha512-QkPS/MIUmPLAGDZw1KQA3xdJ+rwAcyftemvMQicvyJIahSPtPDy+umsWvXUSd0fOANmq+dVoLsKp5CjUJQa9Vg==
+  dependencies:
+    "@tanstack/table-core" "8.15.3"
+
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.npmjs.org/@trysound/sax/-/sax-0.2.0.tgz"

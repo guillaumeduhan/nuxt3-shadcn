@@ -6,7 +6,7 @@ const items = ref([
     icon: "ri:dashboard-line"
   }, {
     title: "Transactions",
-    path: "/",
+    path: "/transactions",
     icon: "lucide:arrow-left-right"
   }, {
     title: "Account",
