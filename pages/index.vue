@@ -89,9 +89,7 @@ onMounted(() => {
     </main>
     <footer>
       <div class="grid gap-4 lg:grid-cols-3">
-        <div class="grid gap-4 lg:grid-cols-3">
-          <Card v-for='( item, index ) in  3 ' :key='index' />
-        </div>
+        <Card v-for='( item, index ) in  cards' :card="item" :key='index' />
       </div>
     </footer>
   </div>
