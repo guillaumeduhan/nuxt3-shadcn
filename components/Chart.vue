@@ -1,21 +1,59 @@
 <script setup>
-let loading = ref(false)
-let data = ref([])
-let list = [
-  {
-    title: "Today"
-  }, {
-    title: "Week"
-  }, {
-    title: "Month"
-  }, {
-    title: "Year"
-  }
-]
-let props = defineProps(['categories', 'currentCategory'])
+let props = defineProps(['currentCategory', 'data']);
+let data = props.data || [];
+let currentCategory = props.currentCategory || 'today';
 
-let categories = props.categories;
-let currentCategory = props.currentCategory;
+let categories = ref({
+  today: [
+    "00:00",
+    "01:00",
+    "02:00",
+    "03:00",
+    "04:00",
+    "05:00",
+    "06:00",
+    "07:00",
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+    "23:00"
+  ],
+  week: [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ],
+  year: [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec'
+  ]
+})
 
 let options = computed(() => ({
   chart: {
@@ -29,7 +67,7 @@ let options = computed(() => ({
   },
   xAxis: {
     gridLineColor: 'transparent', // remove line
-    categories: categories[currentCategory]
+    categories: categories.value[currentCategory]
   },
   yAxis: {
     gridLineColor: 'transparent',
@@ -63,7 +101,7 @@ let options = computed(() => ({
         [1, 'rgba(29,217,93,1)'],
       ]
     },
-    data: toRaw(data.value)
+    data
   }]
 }))
 
@@ -90,22 +128,14 @@ function generateMonth() {
   return month;
 }
 
-function generateRandomValue(number = 7) {
-  let values = [];
-  for (let j = 0; j < number + 1; j++) {
-    values.push(Math.floor(Math.random() * 100));
-  }
-  data.value = values;
-  return values;
-}
-
-// 8. on Mounted we gnerate month and random value
+// 8. on Mounted we generate month and random value
 onMounted(() => {
   generateMonth();
-  generateRandomValue(24);
 })
 </script>
 
 <template>
-  <highchart :options="options" />
+  <div class="border rounded-lg p-4">
+    <highchart :options="options" />
+  </div>
 </template>

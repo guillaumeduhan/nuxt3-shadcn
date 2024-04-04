@@ -1,5 +1,6 @@
 <script setup>
 const open = ref(true);
+const name = "Codewithg.com"
 </script>
 
 <template>
@@ -16,8 +17,11 @@ const open = ref(true);
     </div>
     <div class="hidden lg:flex w-[250px] h-screen flex flex-col justify-between border-r">
       <SidebarMenu />
-      <div>
-        UserItem
+      <div class="p-4">
+        <div class="flex items-center gap-2 text-black cursor-pointer hover:bg-neutral-50 rounded p-2">
+          <div class="bg-green-300 h-10 w-10 rounded-full flex items-center justify-center font-bold text-white">{{ name[0] }}</div>
+          <p class="text-black text-sm font-bold">{{ name }}</p>
+        </div>
       </div>
     </div>
   </div>

@@ -10,15 +10,15 @@ const items = ref([
     icon: "lucide:arrow-left-right"
   }, {
     title: "Account",
-    path: "/account",
+    path: "/",
     icon: "lucide:bolt"
   }, {
     title: "Contacts",
-    path: "/contacts",
+    path: "/",
     icon: "lucide:square-user-round"
   }, {
     title: "Settings",
-    path: "/settings",
+    path: "/",
     icon: "lucide:settings"
   }
 ])

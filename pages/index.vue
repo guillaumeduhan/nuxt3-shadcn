@@ -1,6 +1,7 @@
 <script setup>
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 const loading = ref(false)
+let data = ref([])
 const list = [
   {
     title: "Today"
@@ -13,59 +14,16 @@ const list = [
   }
 ]
 
-let categories = ref({
-  today: [
-    "00:00",
-    "01:00",
-    "02:00",
-    "03:00",
-    "04:00",
-    "05:00",
-    "06:00",
-    "07:00",
-    "08:00",
-    "09:00",
-    "10:00",
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-    "23:00"
-  ],
-  week: [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday'
-  ],
-  year: [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'
-  ]
-})
-
 let currentCategory = ref("today");
+
+function generateRandomValue(number = 7) {
+  let values = [];
+  for (let j = 0; j < number + 1; j++) {
+    values.push(Math.floor(Math.random() * 100));
+  }
+  data.value = values;
+  return values;
+}
 
 const setCategory = (e) => {
   let v = e.target.innerText.toLowerCase();
@@ -102,16 +60,20 @@ const cards = [
     icon: "tabler:zoom-money"
   }
 ]
+
+onMounted(() => {
+  generateRandomValue(24);
+})
 </script>
 
 <template>
   <div class="grid w-full gap-4">
     <header class="flex items-start justify-between">
       <div class="grow">
-        <p>Hi, welcome back Guillaume !</p>
+        <p>Hi, welcome back !</p>
         <h1>Dashboard</h1>
       </div>
-      <div class="w-[120px] h-[36px] bg-neutral-200"></div>
+      <ProductNew />
     </header>
     <main class="grid w-full gap-4">
       <Tabs default-value="Today" class="w-full" @click="setCategory">
@@ -121,13 +83,13 @@ const cards = [
           </TabsTrigger>
         </TabsList>
         <TabsContent class="w-[100%]" v-for="item, index in  list " :key="index" :value="item.title">
-          <Chart :currentCategory="currentCategory" :categories="categories" />
+          <Chart v-if="data.length > 0" :currentCategory="currentCategory" :data="data" />
         </TabsContent>
       </Tabs>
     </main>
     <footer>
-      <div class="grid lg:grid-cols-3 gap-4">
-        <p>Cards here</p>
+      <div class="grid gap-4 lg:grid-cols-3">
+        <Card v-for='( item, index ) in  cards' :card="item" :key='index' />
       </div>
     </footer>
   </div>
